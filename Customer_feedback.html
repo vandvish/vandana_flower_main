@@ -1,0 +1,393 @@
+<html>
+	<head>
+		<title>Customer Feedback</title>
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+		<link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+		
+		
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			google.charts.load("current", {packages:["corechart"]});
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+			  var data = google.visualization.arrayToDataTable([
+				['Employee Name', 'Score of the Employee'],
+				['Employee 1',     {{s1}}],
+				['Employee 2',      {{s2}}],
+				['Employee 3',  {{s3}}],
+				['Employee 4', {{s4}}],
+				['Employee 5',    {{s5}}]
+			  ]);
+	  
+			  var options = {
+				legend: 'none',
+				pieSliceText: 'label',
+				title: 'Best Employee Score Based on the customer feedback',
+
+                  
+				pieStartAngle: 100,
+				slices: {  2: {offset: 0.1},
+                    
+          		},
+			  };
+	  
+			  var chart = new google.visualization.PieChart(document.getElementById('Employee_score'));
+			  chart.draw(data, options);
+			}
+		  </script>
+
+		  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		  <script type="text/javascript">
+			google.charts.load("current", {packages:["corechart"]});
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Employee Name', 'No of reviews'],
+				['Employee 1',     {{r1}}],
+				['Employee 2',      {{r2}}],
+				['Employee 3',  {{r3}}],
+				['Employee 4', {{r4}}],
+				['Employee 5',    {{r5}}]
+			]);
+
+			var options = {
+				legend: 'none',
+        		pieSliceText: 'label',
+				title: 'Employee with most Reviews ',
+				
+				pieStartAngle: 100,
+				slices: {  2: {offset: 0.1},
+                
+          		},
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('Employee_review_count'));
+			chart.draw(data, options);
+			}
+		</script>
+
+
+
+
+		<style>
+			.bg
+			{
+				background-image: url({{ url_for('static', filename='background1.jpg') }});
+				
+				height: 700px;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				
+				
+				
+			}
+			
+			body{
+				margin:0px;
+				margin-bottom:100px;
+				background-image: none;
+				background-repeat: no-repeat;
+			}
+			
+			.main
+			{
+				padding-left:200px;
+				padding-top:150px;
+				font-size:85px;
+				color:rgb(0, 0, 0);
+				font-family: "Lobster";
+			}
+			
+			.aboutUs
+			{
+				text-align:right;
+				
+				padding-right:50;
+				padding-top:20;
+				border-color:black;
+                background-color: transparent;
+				font-weight:bold;
+				border-width:1px;
+				color: floralwhite;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				
+				font-size: 16px;
+				margin: 4px 2px;
+				cursor: pointer;
+				
+				
+				border-radius: 30px;
+				outline: none;
+				
+			}
+			.aboutUs:hover
+			{
+			background-color:transparent;
+			border-color:black;
+			color:antiquewhite;
+			}
+			.getstarted
+			{
+				text-align:right;
+				
+				padding-right:50;
+				padding-top:20;
+				border-color:black;
+                background-color: transparent;
+				font-weight:bold;
+				border-width:1px;
+				color: black;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				
+				font-size: 16px;
+				margin: 4px 2px;
+				cursor: pointer;
+				
+				
+				border-radius: 30px;
+				outline: none;
+			}
+			
+			.form
+			{
+				display: flex;
+				margin-left:30px;
+				
+				margin-top:25px;
+				margin-bottom:100px;
+				
+				
+				width:1450px;
+				height:600px;
+				box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+				
+				background-repeat: no-repeat;
+				
+			}
+			
+			.some_text
+			{
+				padding-top:100px;
+				font-family:"Piazzolla";
+				font-size:23px;
+				text-align:justify;
+				margin-right:100px;
+		
+			}
+			
+			.border
+			{
+				display: flex;
+				margin-left:30px;
+				
+				margin-top:100px;
+				margin-bottom:100px;
+				
+				
+				width:1450px;
+				height:800px;
+				box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+				
+				background-repeat: no-repeat;
+
+			}
+			.line
+			{
+				margin-left:250px;
+				margin-right:250px;
+				border: 1px solid rgb(12, 12, 12);
+				
+				border-radius: 500px;
+			}
+			.image
+			{
+				margin-left:40px;
+				margin-top:130px;
+				width:600px;
+				height:600px;
+			}
+			html {
+  scroll-behavior: smooth;
+ }
+
+ .main_form
+ {
+	 
+	 
+	 height:2000px;
+	 
+	 margin-top:50px;
+	 margin-left:50px;
+	 margin-bottom:50px;
+	 margin-right:50px;	
+     
+ }				
+		
+.title
+{
+	font-family:"Exo 2";
+	color:rgb(10, 10, 10);
+	font-size:50px;
+	padding-top:100px;
+	padding-left:520px;
+}
+
+input
+{
+	-moz-border-radius: 15px;
+	border-radius: 30px;
+    border:solid 1px rgb(54, 54, 52);
+	height:50px;
+	width:400px;
+	outline: none;
+	background-color:lightgray;
+	padding-left: 20px;
+	font-size:15px;
+	font-family:"Balsamiq Sans";
+    
+
+}
+
+.input_field
+{
+	padding-left:500px;
+}
+
+.employees
+{
+	-moz-border-radius: 15px;
+	border-radius: 30px;
+    border:solid 1px black;
+	height:50px;
+	width:400px;
+	outline: none;
+	background-color:lightgray;
+	padding-left: 20px;
+	padding-right:20px;
+	font-size:15px;
+	font-family: "Balsamiq Sans";
+}
+
+.feedback
+{
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+    border:solid 1px rgb(53, 52, 52);
+	width:400px;
+	outline: none;
+	background-color:lightgray;
+	padding-left: 20px;
+	padding-right:20px;
+	font-size:15px;
+	padding-top:20px;
+	font-family: "Balsamiq Sans";
+	color:black;
+	
+	
+}
+
+.submit
+{
+	background-color:white;
+  border: solid 1px black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom:500px;
+}
+
+.chart
+{
+	margin-top: 80px;
+	display: flex;
+}
+
+			
+		</style>
+		
+		
+	</head>
+	
+<body>
+	<div class = "bg" >
+		<a href="#aboutTheProject"><button class = "aboutUs"  style="position: absolute; right: 20;top:10">About Us</button></a>
+		<div class = "main">
+			<p>What's on Flowers <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flowers Anytime Anywhere </p>	
+		</div>
+    </div>
+    <br><br><br><br><br>
+		<center><a href="#form"><button class = "getstarted">Feedback</button></a></center>
+	<br><br><br><br><br>
+	<center><h1 style="font-size: 40px">About Us</h1></center>
+	<div class="form" id = "aboutTheProject">
+		<div class="image"><img src="{{url_for('static',filename = 'win.jpg')}}" alt="clipart" ></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="some_text">
+			<br>
+            What's on Flowers is glad to give quality flowers and plants to our customers. Our retail premises opened in 2020 after much interest from the Mumbai open who respected our orchids at the Exhibition Flower Show. From that point forward, we have bloomed into a full administration flower specialist with both private and corporate customers. We owe quite a bit of our prosperity to our extraordinary customers who move us to make unique and dazzling structures. Our master staff is here to enable all customers to pick the best flowers and plants for all events and purposes.
+			
+		
+		</div>
+			
+	</div>
+	
+	<hr class="line" id="form">
+	
+	<div class="border">
+	<form  method="post","get" action="http://127.0.0.1:5000/">
+	<div class="main_form"  >
+		<div class = "title">
+			FeedBack Form
+		</div>
+        <br><br>
+		<div class="input_field">
+			<input type="text" placeholder="Enter your Name" name="customer_name" required/>
+
+		<br><br>
+		
+			<select class = "employees" placeholder="Select the Employee" name = "emp_id" required>
+				<option value="" disabled selected>Select your option</option>
+				<option value="Emp_001">1 Elena Franceschi</option>
+				<option value="Emp_002">2 Artezia Rozan</option>
+				<option value="Emp_003">3 Kei Kudo</option>
+				<option value="Emp_004">4 Aristia Roscente</option>
+				<option value="Emp_005">5 Lee Min ho</option>
+			</select>
+		<br><br>
+		
+		
+			<textarea placeholder="Comment" rows = 5 cols = 5 class = "feedback" name = "feedback" required></textarea>
+		
+        <br><br>
+		
+			<input type="submit" class = "submit" value="Post Comment"> 
+        </div>
+        </div>
+
+	</form>
+	
+    </div>
+	<br><br><br><br><br>
+	<hr class="line" id="form">
+	
+	
+	<div class="chart">
+		<div id="Employee_score" style="width: 1200px; height: 600px;"></div>
+    	<div id="Employee_review_count" style="width: 1200px; height: 600px;"></div>
+	</div>
+	
+	
+	
+</body>
+	
+</html>
